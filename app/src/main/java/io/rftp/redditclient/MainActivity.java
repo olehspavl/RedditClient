@@ -327,10 +327,7 @@ public class MainActivity extends AppCompatActivity {
                     new DialogInterface.OnClickListener() {
                       @Override
                       public void onClick(DialogInterface dialog, int which) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                          requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                              PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
-                        }
+                        requestPermissionsAfterSdkM();
                       }
                     });
               } else {
@@ -351,6 +348,13 @@ public class MainActivity extends AppCompatActivity {
           .show();
     }
 
+    private void requestPermissionsAfterSdkM() {
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
+            PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
+      }
+    }
+
     private boolean isPermissionsGranted() {
       return ContextCompat.checkSelfPermission(getActivity(),
           Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
@@ -366,8 +370,7 @@ public class MainActivity extends AppCompatActivity {
         if (shouldShowRequestPermissionRationale()) {
           Toast.makeText(getActivity(), "I want to save image for you!", Toast.LENGTH_SHORT).show();
         }
-          requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE},
-              PERMISSION_REQUEST_WRITE_EXTERNAL_STORAGE);
+        requestPermissionsAfterSdkM();
       } else {
         return false;
       }
