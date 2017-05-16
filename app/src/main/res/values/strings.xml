@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name">Reddit</string>
+  <string name="prev">PREV</string>
+  <string name="next">NEXT</string>
+  <string name="dummy_title">Title</string>
+  <string name="dummy_n_comments">N comments</string>
+  <string name="dummy_x_hours_ago">x hours ago</string>
+  <string name="dummy_by_author">by Author</string>
+</resources>

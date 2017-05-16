@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools">
+
+  <ProgressBar
+      style="?android:attr/progressBarStyleLarge"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/progressBar" android:layout_centerInParent="true" android:visibility="gone"/>
+  <LinearLayout
+      android:id="@+id/pagingLL"
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" android:gravity="center_vertical"
+      android:background="@color/colorGrayBg"
+      android:layout_alignParentBottom="true">
+    <TextView
+        android:text="@string/prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/pagingPrevTV" android:layout_weight="1"
+        android:gravity="center_vertical" android:padding="16dp"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/pageIndicatorsLL">
+      <View
+          android:layout_width="10dp" android:layout_height="10dp"
+          android:background="@color/colorPrimary"
+          android:layout_margin="4dp"
+          android:id="@+id/pagingPointOne"/>
+      <View
+          android:layout_width="10dp" android:layout_height="10dp"
+          android:background="@color/colorPrimary"
+          android:layout_margin="4dp"
+          android:id="@+id/pagingPointTwo"/>
+      <View
+          android:layout_width="10dp" android:layout_height="10dp"
+          android:background="@color/colorPrimary"
+          android:layout_margin="4dp"
+          android:id="@+id/pagingPointThree"/>
+      <View
+          android:layout_width="10dp" android:layout_height="10dp"
+          android:background="@color/colorPrimary"
+          android:layout_margin="4dp"
+          android:id="@+id/pagingPointFour"/>
+      <View
+          android:layout_width="10dp" android:layout_height="10dp"
+          android:background="@color/colorPrimary"
+          android:layout_margin="4dp"
+          android:id="@+id/pagingPointFive"/>
+    </LinearLayout>
+    <TextView
+        android:text="@string/next"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" android:id="@+id/pagingNextTV" android:layout_weight="1"
+        android:gravity="end|center_vertical" android:padding="16dp"/>
+  </LinearLayout>
+  <android.support.v7.widget.RecyclerView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/redditRV"
+      app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+      tools:listitem="@layout/reddit_item"
+      android:scrollbars="vertical"
+      android:layout_above="@+id/pagingLL" android:layout_margin="8dp"/>
+</RelativeLayout>

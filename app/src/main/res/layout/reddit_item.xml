@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" android:layout_toRightOf="@+id/itemThumbnailIV"
+      android:layout_toEndOf="@+id/itemThumbnailIV" android:layout_marginLeft="8dp">
+    <TextView
+        android:text="@string/dummy_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/itemTitleTV"
+        android:textSize="@dimen/text_large" android:textColor="@android:color/black"/>
+    <TextView
+        android:text="@string/dummy_n_comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/itemCommentsCountTV"
+        android:layout_marginTop="8dp"
+        style="@style/ItemInfoTV"/>
+    <TextView
+        android:text="@string/dummy_x_hours_ago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/itemTimeAgoTV"
+        android:layout_marginTop="4dp"
+        style="@style/ItemInfoTV"/>
+    <TextView
+        android:text="@string/dummy_by_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/itemAuthorTV"
+        android:layout_marginTop="4dp"
+        style="@style/ItemInfoTV"/>
+  </LinearLayout>
+  <ImageView
+      android:layout_width="40dp"
+      android:layout_height="40dp" app:srcCompat="@color/colorGrayBg"
+      android:id="@+id/itemThumbnailIV"/>
+</RelativeLayout>
